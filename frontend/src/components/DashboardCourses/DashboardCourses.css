@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+  margin-top: 70px;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid;
+}
+th {
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid;
+}
+td {
+  padding: 15px;
+  border: 1px solid;
+  border: 1 px solid brown;
+  font-size: 20px;
+  height: 50px;
+}
+.createbtn {
+  padding: 10px;
+  margin-bottom: 60px;
+  justify-content: flex-end;
+  background-color: brown;
+  float: right;
+  color: white;
+}
+.deletebtn {
+  background-color: brown;
+  color: white;
+  padding: 8px;
+}
+.editbtn {
+  background-color: brown;
+  color: white;
+  padding: 8px;
+}

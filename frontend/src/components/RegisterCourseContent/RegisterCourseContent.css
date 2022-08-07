@@ -1,0 +1,67 @@
+.RegisterCourseContent {
+  margin: 4rem auto;
+  width: 90%;
+  max-width: 500px;
+  background-color: #665450;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.RegisterCourseContent h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+.RegisterCourseContent label {
+  display: block;
+  padding: 10px 10px 5px 5px;
+}
+
+.RegisterCourseContent form div input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+
+  padding: 5px;
+}
+
+.RegisterCourseContent form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 3px 0;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+.RegisterCourseContent form button:hover {
+  background-color: rgb(189, 58, 58);
+}
+
+.RegisterCourseContent .traverse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.RegisterCourseContent .traverse a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.RegisterCourseContent .traverse a:hover {
+  color: red;
+}

@@ -1,0 +1,40 @@
+.SmallForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.SmallForm form {
+  max-width: 600px;
+
+  width: 70%;
+  background-color: burlywood;
+}
+.SmallForm form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.SmallForm form div input {
+  width: 80%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+.SmallForm form button {
+  width: 60px;
+
+  padding: 3px 0;
+  font-size: 18px;
+
+  border-radius: 5px;
+  background-color: wheat;
+}

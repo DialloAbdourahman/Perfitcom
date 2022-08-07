@@ -1,0 +1,76 @@
+body {
+  background-image: url("../../files//17.jpg");
+  background-size: "cover";
+}
+
+.SigninForm {
+  margin: 70px auto;
+  width: 70%;
+  max-width: 500px;
+  background-color: #665450;
+  color: white;
+  padding: 15px;
+  border-radius: 25px;
+  margin-top: 180px;
+}
+
+.SigninForm h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+.SigninForm form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.SigninForm form div input {
+  width: 80%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.SigninForm form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 3px 0;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+.SigninForm form button:hover {
+  background-color: rgb(189, 58, 58);
+}
+
+.SigninForm .traverse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.SigninForm .traverse a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.SigninForm .traverse a:hover {
+  color: red;
+}
+@media screen and (max-width: 600px) {
+  .SigninForm input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,8 @@
+.left button {
+  background-color: brown;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 10px;
+}

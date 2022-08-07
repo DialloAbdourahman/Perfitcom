@@ -1,0 +1,44 @@
+.SingleCourseContent {
+  background-color: #665450;
+  color: white;
+  padding: 20px 10px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto;
+}
+.SingleCourseContent h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+.SingleCourseContent p {
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+
+.SingleCourseContent .btn-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SingleCourseContent .btn-list button {
+  width: 100%;
+  padding: 10px 0;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 5px;
+  transition: transform 0.1s linear;
+}
+
+.SingleCourseContent .btn-list button:hover {
+  background-color: red;
+  transform: scale(0.97);
+}
+
+.SingleCourseContent .red {
+  color: red;
+}

@@ -1,0 +1,37 @@
+.CourseList .head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CourseList h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 40px;
+  color: red;
+  border-bottom: 2px solid red;
+  border-radius: 5px;
+  text-transform: capitalize;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.CourseList .list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 0 30px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .CourseList .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .CourseList .list {
+    grid-template-columns: 1fr;
+  }
+}

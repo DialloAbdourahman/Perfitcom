@@ -1,0 +1,68 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 0 30px;
+}
+
+.Navbar .logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.Navbar .nav-side {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.Navbar .nav-side li {
+  list-style-type: none;
+  color: red;
+  font-weight: bold;
+}
+
+.Navbar .nav-side li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.Navbar .signout {
+  padding: 3px 10px;
+  border: none;
+  background-color: red;
+  color: white;
+  font-weight: normal;
+  border-radius: 5px;
+}
+
+.active {
+  /* background-color: rgb(54, 54, 54); */
+  border-bottom: 2px solid red;
+}
+
+.active a {
+  color: black;
+}
+
+@media screen and (max-width: 700px) {
+  .Navbar .nav-side {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Navbar {
+    flex-direction: column;
+  }
+  .Navbar .nav-side {
+    padding-bottom: 20px;
+  }
+  .Navbar .nav-side {
+    width: 100%;
+  }
+}
