@@ -54,7 +54,9 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state, dispatch, fetchCourses }}>
+    <AppContext.Provider
+      value={{ ...state, dispatch, fetchCourses, fetchRegisteredCourses }}
+    >
       {children}
     </AppContext.Provider>
   );

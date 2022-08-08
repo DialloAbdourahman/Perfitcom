@@ -1,57 +1,40 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactContent = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const form = useRef();
 
-  const sendEmail = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
-    if (name && email && message) {
-      try {
-        axios.post("http://localhost:4000/contact_mail", {
-          useremail: email,
-          text: message,
-        });
-        alert("Message was sent");
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      alert("Please enter all the fields before submiting");
-    }
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID_FOR_CONTACT_PAGE,
+        form.current,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+
+          alert("Email has been sent");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Email has not been sent");
+        }
+      );
   };
 
   return (
-    <form onSubmit={sendEmail}>
+    <form ref={form} onSubmit={sendEmail}>
       <label>Name</label>
-      <input
-        type="text"
-        name="user_name"
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-      />
+      <input type="text" name="user_name" />
       <label>Email</label>
-      <input
-        type="email"
-        name="user_email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
+      <input type="email" name="user_email" />
       <label>Message</label>
-      <textarea
-        name="message"
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}
-      />
+      <textarea name="message" />
       <input type="submit" value="Send" />
     </form>
   );

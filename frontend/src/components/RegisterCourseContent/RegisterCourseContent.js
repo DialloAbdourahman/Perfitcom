@@ -53,6 +53,7 @@ const RegisterCourseContent = ({ course }) => {
             phoneNumber,
             job,
             address,
+            email: user.email,
           });
           const userID = user.uid;
           const courseID = course;

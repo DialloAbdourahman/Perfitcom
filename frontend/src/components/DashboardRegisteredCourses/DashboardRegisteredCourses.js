@@ -1,55 +1,56 @@
 import React, { useState, useEffect } from "react";
-import {
-  db,
-  collection,
-  query,
-  getDocs,
-  doc,
-  deleteDoc,
-  updateDoc,
-} from "../../firebase.js";
+import axios from "axios";
+import { db, doc, deleteDoc, updateDoc } from "../../firebase.js";
 import { useGlobalContext } from "../../context";
 import "./DashboardRegisteredCourses.css";
 
 const DashboardRegisteredCourses = () => {
-  const { registeredCourses, users, courses } = useGlobalContext();
-  const [registered, setRegistered] = useState([]);
+  const { registeredCourses, users, courses, fetchRegisteredCourses } =
+    useGlobalContext();
 
-  const fetchregisteredCourses = async () => {
-    const q = query(collection(db, "registeredCourses"));
-
-    const querySnapshot = await getDocs(q);
-    const data = [];
-    querySnapshot.forEach((doc) => {
-      data.push({ id: doc.id, ...doc.data() });
-    });
-    setRegistered(data);
+  const sendEmailForRegistration = async (id) => {
+    try {
+      const response = await axios.post("http://localhost:4000/approve", {
+        useremail: users.find((user) => user.id === id)?.email,
+      });
+      alert("This user has been approved.");
+    } catch (error) {
+      console.error(error);
+      alert("not great");
+    }
   };
 
-  const deleteRegistration = async (id) => {
+  const sendEmailForRejection = async (id) => {
+    try {
+      const response = await axios.post("http://localhost:4000/reject", {
+        useremail: users.find((user) => user.id === id)?.email,
+      });
+      alert("You have deleted this registration.");
+      fetchRegisteredCourses();
+    } catch (error) {
+      console.error(error);
+      alert("not great");
+    }
+  };
+
+  const deleteRegistration = async (id, uid) => {
     await deleteDoc(doc(db, "registeredCourses", id));
-    alert("You have deleted this registration.");
-    fetchregisteredCourses();
-    // Send email to user telling him that he is not approved
+    sendEmailForRejection(uid);
+    fetchRegisteredCourses();
   };
 
-  const approveRegistration = async (id) => {
+  const approveRegistration = async (id, uid) => {
     const CourseRef = doc(db, "registeredCourses", id);
     await updateDoc(CourseRef, {
       approved: true,
     });
-    alert("This user has been approved.");
-    fetchregisteredCourses();
-    // Send email to user telling him that he is approved
+    sendEmailForRegistration(uid);
+    fetchRegisteredCourses();
   };
-
-  useEffect(() => {
-    fetchregisteredCourses();
-  }, []);
 
   return (
     <section className="DashboardRegisteredCourses">
-      <h1>Registration:{registered.length}</h1>
+      <h1>Registration:{registeredCourses.length}</h1>
       <table>
         <thead>
           <th>Username</th>
@@ -59,7 +60,7 @@ const DashboardRegisteredCourses = () => {
           <th>Operations</th>
         </thead>
         <tbody>
-          {registered.map((item) => {
+          {registeredCourses.map((item) => {
             return (
               <tr key={item.id}>
                 <td>
@@ -75,14 +76,14 @@ const DashboardRegisteredCourses = () => {
                   <button
                     className="btn"
                     type="button"
-                    onClick={() => approveRegistration(item.id)}
+                    onClick={() => approveRegistration(item.id, item.userID)}
                   >
                     Approved
                   </button>
                   <button
                     className="btn"
                     type="button"
-                    onClick={() => deleteRegistration(item.id)}
+                    onClick={() => deleteRegistration(item.id, item.userID)}
                   >
                     Delete
                   </button>
