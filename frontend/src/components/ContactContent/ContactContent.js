@@ -17,7 +17,6 @@ const ContactContent = () => {
       .then(
         (result) => {
           console.log(result.text);
-
           alert("Email has been sent");
         },
         (error) => {

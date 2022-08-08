@@ -12,6 +12,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import RegisterCourse from "./pages/RegisterCourse";
 import Contact from "./pages/Contact";
+import Payment from "./pages/Payment";
 
 const App = () => {
   const { dispatch } = useGlobalContext();
@@ -38,6 +39,7 @@ const App = () => {
 
         <Route path="/registerCourse/:courseid" element={<RegisterCourse />} />
         <Route path="/course/:courseid" element={<SingleCourse />} />
+        <Route path="/payment/:price" element={<Payment />} />
       </Routes>
     </section>
   );
