@@ -8,11 +8,13 @@ const Payment = () => {
   const params = useParams();
   const price = params.price;
   return (
-    <>
-      <Navbar />
-      <PaymentContent price={price} />
+    <section className="section-footer">
+      <div className="top">
+        <Navbar />
+        <PaymentContent price={price} />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 

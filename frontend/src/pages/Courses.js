@@ -5,11 +5,13 @@ import Footer from "../components/Footer/Footer";
 
 const Courses = () => {
   return (
-    <>
-      <Navbar />
-      <CourseList />
+    <section className="section-footer">
+      <div className="top">
+        <Navbar />
+        <CourseList />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 

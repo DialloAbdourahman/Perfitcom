@@ -5,11 +5,13 @@ import Footer from "../components/Footer/Footer";
 
 const Contact = () => {
   return (
-    <>
-      <Navbar />
-      <ContactContent />
+    <section className="section-footer">
+      <div className="top">
+        <Navbar />
+        <ContactContent />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 

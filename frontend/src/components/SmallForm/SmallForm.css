@@ -38,3 +38,13 @@
   border-radius: 5px;
   background-color: wheat;
 }
+
+.section-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.section-footer .top {
+  flex-grow: 1;
+}

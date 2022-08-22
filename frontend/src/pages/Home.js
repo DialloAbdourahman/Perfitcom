@@ -5,11 +5,13 @@ import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
-      <HomeContent />
+    <section className="section-footer">
+      <div className="top">
+        <Navbar />
+        <HomeContent />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 

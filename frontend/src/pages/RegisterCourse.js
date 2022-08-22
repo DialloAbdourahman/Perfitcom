@@ -9,11 +9,13 @@ const RegisterCourse = () => {
   const params = useParams();
 
   return (
-    <>
-      <Navbar />
-      <RegisterCourseContent course={params.courseid} />
+    <section className="section-footer">
+      <div className="top">
+        <Navbar />
+        <RegisterCourseContent course={params.courseid} />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 

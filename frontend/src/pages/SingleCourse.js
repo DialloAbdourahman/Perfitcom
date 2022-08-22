@@ -9,11 +9,13 @@ const Course = () => {
   const courseID = params.courseid;
 
   return (
-    <>
-      <Navbar />
-      <SingleCourseContent id={courseID} />
+    <section className="section-footer">
+      <div className="top">
+        <Navbar />
+        <SingleCourseContent id={courseID} />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 

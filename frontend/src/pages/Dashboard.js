@@ -11,11 +11,13 @@ const Dashboard = () => {
     return <h1>Please stop it because you are not an admin thief !!!</h1>;
   }
   return (
-    <>
-      <Navbar />
-      <DashboardContent />
+    <section className="section-footer">
+      <div className="top">
+        <Navbar />
+        <DashboardContent />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 
